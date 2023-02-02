@@ -969,6 +969,8 @@ function Game (savedGame) {
 // = Sync =
 // ========
 
+const syncInterval = 5000
+
 function Sync () {
   /* -- Private attributes & methods -- */
 
@@ -1012,7 +1014,7 @@ function Sync () {
           $("input[type='text']").attr('readonly', true)
           $("input[type='button']").attr('disabled', true)
           menu.deinit()
-          syncInterval = setInterval(function () { sync.waitForStart() }, 5000)
+          syncInterval = setInterval(function () { sync.waitForStart() }, syncInterval)
 
           localStorage.gameName = gameName
           localStorage.playerIsWhite = sync.playerIsWhite
@@ -1029,7 +1031,7 @@ function Sync () {
           gameName = data
           game = new Game()
           menu.disappear(true)
-          syncInterval = setInterval(function () { sync.waitForMove() }, 5000)
+          syncInterval = setInterval(function () { sync.waitForMove() }, syncInterval)
 
           localStorage.gameName = gameName
           localStorage.playerIsWhite = sync.playerIsWhite
@@ -1044,7 +1046,7 @@ function Sync () {
       gameName = localStorage.gameName
       sync.playerIsWhite = parseInt(localStorage.playerIsWhite, 10)
       if (localStorage.whitesTurn != sync.playerIsWhite) {
-        syncInterval = setInterval(function () { sync.waitForMove() }, 5000)
+        syncInterval = setInterval(function () { sync.waitForMove() }, syncInterval)
       }
     },
 
@@ -1112,7 +1114,7 @@ function Sync () {
         if (!data) {
           alert('Error occured during sync! Game might have ended!')
         } else {
-          syncInterval = setInterval(function () { sync.waitForMove() }, 5000)
+          syncInterval = setInterval(function () { sync.waitForMove() }, syncInterval)
         }
       })
     }
