@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery-ui-dist": "^1.13.2",
+    "parcel": "^2.8.3"
+  }
+}
