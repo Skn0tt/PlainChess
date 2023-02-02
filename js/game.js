@@ -100,7 +100,7 @@ function Game (savedGame) {
         }
       } else {
         if (lastMove && lastMove.check) {
-          currentTurnString = 'Check! '
+          // currentTurnString = 'Check! '
         }
         if (sync) {
           currentTurnString += (whitesTurn === sync.playerIsWhite) ? 'Your turn.' : "Opponent's turn."
@@ -212,7 +212,7 @@ function Game (savedGame) {
           }
         })
       } else {
-        controller.blink($('td > .piece.king.' + ((whitesTurn) ? 'white' : 'black')), 2, 1000)
+        // controller.blink($('td > .piece.king.' + ((whitesTurn) ? 'white' : 'black')), 2, 1000)
       }
     } else if (moves[moves.length - 1].stalemate) {
       controller.blink($('td > .piece.king'), 3, 1000, function () {
