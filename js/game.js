@@ -969,7 +969,7 @@ function Game (savedGame) {
 // = Sync =
 // ========
 
-const syncInterval = 5000
+const syncInterval = 500
 
 function Sync () {
   /* -- Private attributes & methods -- */
