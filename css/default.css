@@ -285,7 +285,7 @@ tr:last-child > th {
 }
 
 .acceptable > .piece {
-	/* opacity: 0.5; */
+	opacity: 0.5;
 }
 
 .piece {
