@@ -100,7 +100,7 @@ function Game (savedGame) {
         }
       } else {
         if (lastMove && lastMove.check) {
-          // currentTurnString = 'Check! '
+          //currentTurnString = 'Check! '
         }
         if (sync) {
           currentTurnString += (whitesTurn === sync.playerIsWhite) ? 'Your turn.' : "Opponent's turn."
@@ -212,7 +212,7 @@ function Game (savedGame) {
           }
         })
       } else {
-        // controller.blink($('td > .piece.king.' + ((whitesTurn) ? 'white' : 'black')), 2, 1000)
+        //controller.blink($('td > .piece.king.' + ((whitesTurn) ? 'white' : 'black')), 2, 1000)
       }
     } else if (moves[moves.length - 1].stalemate) {
       controller.blink($('td > .piece.king'), 3, 1000, function () {
@@ -379,23 +379,23 @@ function Game (savedGame) {
           }
 
           // Don't move on a dangerous field
-          // $.each(fields, function (index, fld) {
-          //   // Fields that are directly reachable by opponent
-          //   if (fld.reachableBy[opponentColor].length) {
-          //     fields[index] = []
-          //   // You can't run away from bishops, rooks and queens in their direct lines
-          //   } else {
-          //     $.each(aggressors, function (aggressorIndex, aggressor) {
-          //       if (['rook', 'queen'].includes(aggressor.kind) && that.field.inBetweenCross(aggressor.field, fld)) fields[index] = []
-          //       if (['bishop', 'queen'].includes(aggressor.kind) && that.field.inBetweenDiag(aggressor.field, fld)) fields[index] = []
-          //     })
-          //   }
-          // })
+          $.each(fields, function (index, fld) {
+            // Fields that are directly reachable by opponent
+           /* if (fld.reachableBy[opponentColor].length) {
+              fields[index] = []
+            // You can't run away from bishops, rooks and queens in their direct lines
+            } else {
+              $.each(aggressors, function (aggressorIndex, aggressor) {
+                if (['rook', 'queen'].includes(aggressor.kind) && that.field.inBetweenCross(aggressor.field, fld)) fields[index] = []
+                if (['bishop', 'queen'].includes(aggressor.kind) && that.field.inBetweenDiag(aggressor.field, fld)) fields[index] = []
+              })
+            }*/
+          })
           return fields.flat()
       }
 
       // If king is checked only certain moves are valid
-      if (aggressors.length) {
+      /*if (aggressors.length) {
         cachedFields = fields
         fields = []
 
@@ -415,10 +415,10 @@ function Game (savedGame) {
             }
           })
         }
-      }
+      }*/
 
       // Make sure king won't be checked after this move
-      $.each([[-1, 0], [+1, 0], [0, -1], [0, +1], [-1, +1], [-1, -1], [+1, +1], [+1, -1]], function (index, coords) {
+      /*$.each([[-1, 0], [+1, 0], [0, -1], [0, +1], [-1, +1], [-1, -1], [+1, +1], [+1, -1]], function (index, coords) {
         // If piece is in one of the four outermost board fields, not all lines have to be checked
         if (!field[that.field.column + coords[0]] || !(lineFld = field[that.field.column + coords[0]][that.field.row + coords[1]])) {
           // return true; works in $.each as continue does in for
@@ -451,7 +451,7 @@ function Game (savedGame) {
             }
           }
         }
-      })
+      })*/
 
       return fields
     }
