@@ -279,13 +279,13 @@ tr:last-child > th {
 }
 
 .acceptable:empty {
-	background-image: url("../img/acceptable.png");
+	/*background-image: url("../img/acceptable.png");*/
 	background-position: center center;
 	background-repeat: no-repeat;
 }
 
 .acceptable > .piece {
-	opacity: 0.5;
+	/*opacity: 0.5;*/
 }
 
 .piece {
