@@ -379,18 +379,18 @@ function Game (savedGame) {
           }
 
           // Don't move on a dangerous field
-          // $.each(fields, function (index, fld) {
-          //   // Fields that are directly reachable by opponent
-          //   if (fld.reachableBy[opponentColor].length) {
-          //     fields[index] = []
-          //   // You can't run away from bishops, rooks and queens in their direct lines
-          //   } else {
-          //     $.each(aggressors, function (aggressorIndex, aggressor) {
-          //       if (['rook', 'queen'].includes(aggressor.kind) && that.field.inBetweenCross(aggressor.field, fld)) fields[index] = []
-          //       if (['bishop', 'queen'].includes(aggressor.kind) && that.field.inBetweenDiag(aggressor.field, fld)) fields[index] = []
-          //     })
-          //   }
-          // })
+          $.each(fields, function (index, fld) {
+            // Fields that are directly reachable by opponent
+            if (fld.reachableBy[opponentColor].length) {
+              fields[index] = []
+            // You can't run away from bishops, rooks and queens in their direct lines
+            } else {
+              $.each(aggressors, function (aggressorIndex, aggressor) {
+                if (['rook', 'queen'].includes(aggressor.kind) && that.field.inBetweenCross(aggressor.field, fld)) fields[index] = []
+                if (['bishop', 'queen'].includes(aggressor.kind) && that.field.inBetweenDiag(aggressor.field, fld)) fields[index] = []
+              })
+            }
+          })
           return fields.flat()
       }
 
